@@ -32,6 +32,9 @@ return array(
 
 	// application components
 	'components'=>array(
+        'assetManager'=>array(
+            'baseUrl'=>'/protected/assets/',
+        ),
 
 		'user'=>array(
 			// enable cookie-based authentication
