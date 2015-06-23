@@ -1,0 +1,18 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
+
+AddType application/x-font-woff .woff
+
+<IfModule mod_deflate.c>
+<FilesMatch "\.(js|css|json)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+<filesMatch ".(js|css|png|json)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+</IfModule>

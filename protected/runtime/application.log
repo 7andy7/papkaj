@@ -1,0 +1,8 @@
+2015/06/23 15:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#3 {main}
+REQUEST_URI=/login
+---
