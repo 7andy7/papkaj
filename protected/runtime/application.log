@@ -1,811 +1,264 @@
-2015/06/23 18:46:07 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:31:54 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:31:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:46:46 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:32:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:32:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:46:46 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:33:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:33:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:46:47 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:33:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:33:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:46:47 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:34:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:34:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:04 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:35:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:35:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:05 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:36:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (58)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:36:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(58): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:06 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:38:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (59)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:38:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(59): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:06 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:40:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (60)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:40:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(60): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:06 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:44:09 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (60)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:44:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(60): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:33 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
+2015/06/25 19:44:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (60)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:44:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(60): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:48:46 [error] [php] Object of class CAssetManager could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php:23)
+2015/06/25 19:45:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (60)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:45:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
-#5 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): SiteController->endContent()
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require()
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): SiteController->renderFile()
-#9 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): SiteController->render()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): SiteController->runAction()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): SiteController->run()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
-REQUEST_URI=/
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php (23)
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php (6)
-in C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php (32)
-2015/06/23 18:49:10 [error] [php] Object of class CAssetManager could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php:23)
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
-#5 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): SiteController->endContent()
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require()
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): SiteController->renderFile()
-#9 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): SiteController->render()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): SiteController->runAction()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): SiteController->run()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
-REQUEST_URI=/
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php (23)
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php (6)
-in C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php (32)
-2015/06/23 18:49:11 [error] [php] Object of class CAssetManager could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php:23)
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
-#5 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): SiteController->endContent()
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require()
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): SiteController->renderFile()
-#9 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): SiteController->render()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): SiteController->runAction()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): SiteController->run()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
-REQUEST_URI=/
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php (23)
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php (6)
-in C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php (32)
-2015/06/23 18:49:56 [error] [php] Object of class CAssetManager could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php:23)
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
-#5 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): SiteController->endContent()
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require()
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): SiteController->renderFile()
-#9 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): SiteController->render()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): SiteController->runAction()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): SiteController->run()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
-REQUEST_URI=/
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php (23)
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php (6)
-in C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php (32)
-2015/06/23 18:49:56 [error] [php] Object of class CAssetManager could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php:23)
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
-#5 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): SiteController->endContent()
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require()
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): SiteController->renderFile()
-#9 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): SiteController->render()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): SiteController->runAction()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): SiteController->run()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
-REQUEST_URI=/
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php (23)
-in C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php (6)
-in C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php (32)
-2015/06/23 18:50:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/bootstra...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/assets/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(60): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/25 19:46:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (60)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/25 19:46:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `User` (`role`, `active`, `newsLetter`, `firstName`, `surName`, `email`, `password`, `city`, `phoneNumber`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\PROJECTS\papkaj\yii\framework\db\CDbCommand.php:358
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(60): CActiveRecord->save()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionRegistration()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/registrati...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#11 {main}
+REQUEST_URI=/auth/registration
+HTTP_REFERER=http://papkaj.loc.com/auth/registration
 ---
-2015/06/23 18:50:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:50:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:51:35 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
----
-2015/06/23 18:51:38 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
----
-2015/06/23 18:51:39 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
----
-2015/06/23 18:51:39 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
----
-2015/06/23 18:51:55 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\wamp\www\PROJECTS\papkaj\protected\config\..\..\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php(152): CAssetManager->setBasePath('C:\\wamp\\www\\PRO...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(220): CComponent->__set('basePath', 'C:\\wamp\\www\\PRO...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('assetManager')
-#4 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(23): CModule->__get('assetManager')
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#16 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#25 {main}
-REQUEST_URI=/
----
-2015/06/23 18:52:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:52:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/boots...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/bootstrap/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 18:58:49 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "getParentAsset".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:266
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(5): CComponent->__call('getParentAsset', Array)
-#1 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\main.php(5): SiteController->getParentAsset('frontend/js/jqu...')
-#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#9 C:\wamp\www\PROJECTS\papkaj\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
-#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
-#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
-#13 C:\wamp\www\PROJECTS\papkaj\protected\controllers\SiteController.php(32): CController->render('index')
-#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#16 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#17 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('')
-#19 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#20 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#21 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#22 {main}
-REQUEST_URI=/
----
-2015/06/23 19:01:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend//assets".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend//asset...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend//assets/
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:01:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend//assets".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend//asset...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend//assets/
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:01:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend//assets".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend//asset...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend//assets/
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:03:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/bootsrtap/css/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/bootsr...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend/bootsrtap/css/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:03:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/bootsrtap/css/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/bootsr...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend/bootsrtap/css/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/bootsrtap/css/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/bootsr...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend/bootsrtap/css/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/bootsrtap/css/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/bootsr...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend/bootsrtap/css/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/bootsrtap/css/bootstrap.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/bootsr...')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/frontend/bootsrtap/css/bootstrap.css
-HTTP_REFERER=http://papkaj.loc.com/
----
-2015/06/23 19:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 12:54:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
 #1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
@@ -814,63 +267,588 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 HTTP_REFERER=http://papkaj.loc.com/
 ---
-2015/06/23 19:11:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 13:34:42 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.getErrors" is not defined.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/favicon.ico
+#0 C:\wamp\www\PROJECTS\papkaj\protected\views\auth\login.php(15): CComponent->__get('getErrors')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(35): CController->render('login', Array)
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionLogin()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/login')
+#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#14 {main}
+REQUEST_URI=/auth/login
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:34:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 13:35:33 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.getErrors" is not defined.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/login
+#0 C:\wamp\www\PROJECTS\papkaj\protected\views\auth\login.php(15): CComponent->__get('getErrors')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#5 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(35): CController->render('login', Array)
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionLogin()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/login')
+#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#14 {main}
+REQUEST_URI=/auth/login
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:36:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 13:47:08 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:16)
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/login
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/login
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (16)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 13:47:31 [error] [php] Wrong parameter count for var_dump() (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:16)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/login
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (16)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 13:47:42 [error] [php] Object of class Salt could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\components\UserIdentity.php:25)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(17): LoginForm->validate()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionLogin()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/login
+in C:\wamp\www\PROJECTS\papkaj\protected\components\UserIdentity.php (25)
+in C:\wamp\www\PROJECTS\papkaj\protected\models\LoginForm.php (53)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (17)
+2015/06/29 13:48:22 [error] [exception.CException] exception 'CException' with message 'Property "Salt.0" is not defined.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 C:\wamp\www\PROJECTS\papkaj\protected\components\UserIdentity.php(25): CModel->offsetGet(0)
+#3 C:\wamp\www\PROJECTS\papkaj\protected\models\LoginForm.php(53): UserIdentity->authenticate()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(17): CModel->validate()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionLogin()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/login')
+#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#16 {main}
+REQUEST_URI=/auth/login
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:40:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/screen.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 13:48:47 [error] [php] Object of class Salt could not be converted to string (C:\wamp\www\PROJECTS\papkaj\protected\components\UserIdentity.php:26)
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/screen.css')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/css/screen.css
-HTTP_REFERER=http://papkaj.loc.com/?
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(17): LoginForm->validate()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionLogin()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/login
+in C:\wamp\www\PROJECTS\papkaj\protected\components\UserIdentity.php (26)
+in C:\wamp\www\PROJECTS\papkaj\protected\models\LoginForm.php (53)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (17)
+2015/06/29 14:29:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "forgottenPassword".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(270): CController->missingAction('forgottenPasswo...')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#5 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:40:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/main.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 14:39:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "forgottenPassword".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php:483
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/main.css')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/css/main.css
-HTTP_REFERER=http://papkaj.loc.com/?
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(270): CController->missingAction('forgottenPasswo...')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#5 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:40:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/form.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 14:41:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "forgottenPassword".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php:483
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/form.css')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/css/form.css
-HTTP_REFERER=http://papkaj.loc.com/?
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(270): CController->missingAction('forgottenPasswo...')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#5 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/login
 ---
-2015/06/23 19:40:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/print.css".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php:286
+2015/06/29 14:43:47 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:81)
 Stack trace:
-#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('css/print.css')
-#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#2 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
-#3 {main}
-REQUEST_URI=/css/print.css
-HTTP_REFERER=http://papkaj.loc.com/?
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (81)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 14:43:48 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:81)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (81)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 14:44:22 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:81)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (81)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 14:44:23 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:81)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (81)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 14:44:41 [error] [php] Undefined variable: loginForm (C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php:27)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): AuthController->renderFile()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): AuthController->renderPartial()
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(83): AuthController->render()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php (27)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (83)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 15:34:14 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:85)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (85)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 15:35:11 [error] [php] Undefined variable: user (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:85)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (85)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 15:36:12 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.name" is not defined.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('name', 'forgottenPasswo...')
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AuthController), 'CActiveForm', Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('CActiveForm', Array)
+#3 C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php(14): CBaseController->beginWidget('CActiveForm', Array)
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): CController->renderPartial('forgottenPasswo...', Array, true)
+#8 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(86): CController->render('forgottenPasswo...', Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#15 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#17 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/login
+---
+2015/06/29 15:36:32 [error] [php] Undefined variable: loginForm (C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php:27)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): AuthController->renderFile()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): AuthController->renderPartial()
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(86): AuthController->render()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php (27)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (86)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 15:46:11 [error] [php] Undefined variable: form (C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php:29)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): AuthController->renderFile()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): AuthController->renderPartial()
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(89): AuthController->render()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php (29)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (89)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 15:50:31 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "errorSummary".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('errorSummary', Array)
+#1 C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php(20): CActiveRecord->__call('errorSummary', Array)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\views\auth\forgottenPassword.php(20): User->errorSummary(Object(CActiveForm))
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\PRO...')
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\PRO...', Array, true)
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\PRO...', Array, true)
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(782): CController->renderPartial('forgottenPasswo...', Array, true)
+#7 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(90): CController->render('forgottenPasswo...', Array)
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#13 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#14 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#16 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 16:27:56 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\PROJECTS\papkaj\yii\framework\db\schema\CDbCommandBuilder.php:673)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (81)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 16:29:40 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\PROJECTS\papkaj\yii\framework\db\schema\CDbCommandBuilder.php:673)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (85)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 16:31:28 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\PROJECTS\papkaj\yii\framework\db\schema\CDbCommandBuilder.php:673)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (84)
+in C:\wamp\www\PROJECTS\papkaj\web\index.php (28)
+2015/06/29 17:09:09 [error] [php] Uninitialized string offset: 60 (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:124)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (124)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (112)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (83)
+2015/06/29 17:09:39 [error] [php] Uninitialized string offset: 60 (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:124)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (124)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (112)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (83)
+2015/06/29 17:10:13 [error] [php] shuffle() expects parameter 1 to be array, string given (C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php:127)
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(83): AuthController->changePasswordByEmail()
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): AuthController->runAction()
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): AuthController->runActionWithFilters()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): AuthController->run()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CWebApplication->run()
+REQUEST_URI=/auth/forgottenPassword
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (127)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (112)
+in C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php (83)
+2015/06/29 17:21:30 [error] [exception.CException] exception 'CException' with message 'Salt and its behaviors do not have a method or closure named "finByPk".' in C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('finByPk', Array)
+#1 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(113): CActiveRecord->__call('finByPk', Array)
+#2 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(113): Salt->finByPk('2')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(83): AuthController->changePasswordByEmail('a.majik7@gmail....')
+#4 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#12 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 17:59:14 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:13 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:15 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:40 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:41 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:41 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:05:42 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:07:10 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
+---
+2015/06/29 18:07:11 [error] [exception.CException] exception 'CException' with message 'Alias "yii.swiftmailer" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\wamp\www\PROJECTS\papkaj\yii\framework\YiiBase.php(196): YiiBase::import('yii\\swiftmailer...', true)
+#1 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CModule.php(103): CModule->getComponent('mail')
+#3 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(126): CModule->__get('mail')
+#4 C:\wamp\www\PROJECTS\papkaj\protected\controllers\AuthController.php(84): AuthController->postEmailAboutChangePassword('a.majik7@gmail....')
+#5 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\actions\CInlineAction.php(49): AuthController->actionForgottenPassword()
+#6 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(282): CController->run('forgottenPasswo...')
+#10 C:\wamp\www\PROJECTS\papkaj\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/forgottenP...')
+#11 C:\wamp\www\PROJECTS\papkaj\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp\www\PROJECTS\papkaj\web\index.php(28): CApplication->run()
+#13 {main}
+REQUEST_URI=/auth/forgottenPassword
+HTTP_REFERER=http://papkaj.loc.com/auth/forgottenPassword
 ---

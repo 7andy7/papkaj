@@ -5,10 +5,9 @@
  *
  * The followings are the available columns in table 'User':
  * @property integer $id
- * @property string $nickName
  * @property string $password
  * @property string $firstName
- * @property string $sureName
+ * @property string $surName
  * @property string $age
  * @property string $city
  * @property string $phoneNumber
@@ -18,10 +17,12 @@
  * @property string $lastLogin
  * @property integer $role
  * @property integer $active
+ * @property integer $newsLetter
  *
  * The followings are the available model relations:
- * @property Message[] $messages
- * @property Message[] $messages1
+ * @property UserHasMessage[] $userHasMessages
+ * @property UserHasMessage[] $userHasMessages1
+ * @property Salt[] $salts
  */
 class User extends CActiveRecord
 {
@@ -41,15 +42,19 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, nickName, password, firstName, sureName, city, phoneNumber, email, createTime, role', 'required'),
-			array('id, role, active', 'numerical', 'integerOnly'=>true),
-			array('nickName', 'length', 'max'=>20),
-			array('password', 'length', 'max'=>30),
-			array('firstName, sureName, city, phoneNumber, email, lastLogin', 'length', 'max'=>45),
-			array('age, updateTime', 'safe'),
+			array('password, firstName, surName, city, phoneNumber, email', 'required', 'on'=>'registration'),
+			array('role, active, newsLetter', 'numerical', 'integerOnly'=>true),
+			array('password', 'length', 'max'=>255),
+			array('firstName, surName', 'length', 'max'=>50),
+			array('city', 'length', 'max'=>40),
+			array('phoneNumber', 'length', 'max'=>20),
+			array('email', 'length', 'max'=>80),
+			array('age, createTime, updateTime, lastLogin', 'safe'),
+                        array('email','required', 'on'=>'forgottenPassword'),
+                        array('email','email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nickName, password, firstName, sureName, age, city, phoneNumber, email, createTime, updateTime, lastLogin, role, active', 'safe', 'on'=>'search'),
+			array('id, password, firstName, surName, age, city, phoneNumber, email, createTime, updateTime, lastLogin, role, active, newsLetter', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,13 +63,20 @@ class User extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'messages' => array(self::HAS_MANY, 'Message', 'fromUserId'),
-			'messages1' => array(self::HAS_MANY, 'Message', 'toUserId'),
-		);
+            // NOTE: you may need to adjust the relation name and the related
+            // forgottenPasswordclass name for the relations automatically generated below.
+            return array(
+                    'userHasMessages' => array(self::HAS_MANY, 'UserHasMessage', 'fromUser'),
+                    'userHasMessages1' => array(self::HAS_MANY, 'UserHasMessage', 'toUser'),
+                    'salt' => array(self::BELONGS_TO, 'Salt', 'id'),
+
+            );
 	}
+        
+        public function hashPassword($password){
+            $password = md5($password);
+            return $password;            
+        }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -73,10 +85,9 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nickName' => 'Nick Name',
 			'password' => 'Password',
 			'firstName' => 'First Name',
-			'sureName' => 'Sure Name',
+			'surName' => 'Sur Name',
 			'age' => 'Age',
 			'city' => 'City',
 			'phoneNumber' => 'Phone Number',
@@ -86,6 +97,7 @@ class User extends CActiveRecord
 			'lastLogin' => 'Last Login',
 			'role' => 'Role',
 			'active' => 'Active',
+			'newsLetter' => 'News Letter',
 		);
 	}
 
@@ -108,10 +120,9 @@ class User extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nickName',$this->nickName,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('firstName',$this->firstName,true);
-		$criteria->compare('sureName',$this->sureName,true);
+		$criteria->compare('surName',$this->surName,true);
 		$criteria->compare('age',$this->age,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('phoneNumber',$this->phoneNumber,true);
@@ -121,6 +132,7 @@ class User extends CActiveRecord
 		$criteria->compare('lastLogin',$this->lastLogin,true);
 		$criteria->compare('role',$this->role);
 		$criteria->compare('active',$this->active);
+		$criteria->compare('newsLetter',$this->newsLetter);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

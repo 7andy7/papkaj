@@ -29,8 +29,15 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+            -
+            $this->setPageTitle('papkaj.sk'); //only for this action
+    
 		$this->render('index');
 	}
+        
+        public function setPageTitle($value){
+            $this->pageTitle = $value ;
+        }
 
 	/**
 	 * This is the action to handle external exceptions.
